@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Product } from "../Product/Product-component";
+import "./ProductList-style.scss";
 
 export default class ProductList extends Component {
   constructor(props) {
@@ -14,9 +15,9 @@ export default class ProductList extends Component {
   }
   render() {
     return (
-      <div>
+      <div class="ProductList-style">
         {this.state.products.map((e) => (
-          <Product name={e.title} price={e.price} />
+          <Product key={e.id} name={e.title} price={e.price} />
         ))}
       </div>
     );
