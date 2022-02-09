@@ -5,7 +5,7 @@ export const Product = (props) => {
     <div className="product-style">
       <p>product name : {props.name}</p>
       <p>product price : {props.price}</p>
-      <button>Delete</button>
+      <button onClick={props.onDelete}>Delete</button>
     </div>
   );
 };

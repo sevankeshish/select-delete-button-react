@@ -13,11 +13,22 @@ export default class ProductList extends Component {
       ],
     };
   }
+  removeHandler = (id) => {
+    // return console.log("clicked", id);
+    const filteredProduct = this.state.products.filter((e) => e.id !== id);
+    this.setState({ products: filteredProduct });
+  };
+
   render() {
     return (
       <div class="ProductList-style">
         {this.state.products.map((e) => (
-          <Product key={e.id} name={e.title} price={e.price} />
+          <Product
+            key={e.id}
+            name={e.title}
+            price={e.price}
+            onDelete={() => this.removeHandler(e.id)}
+          />
         ))}
       </div>
     );
