@@ -8,5 +8,34 @@
   box-shadow: 0 10px 80px rgba(0, 0, 0, 0.065);
   width: 40rem;
   font-size: larger;
-  // background-color: rgb(106, 189, 106);
+  color: #444;
+  background-color: #fff;
+}
+
+button {
+  border: 1px solid #6b21a8;
+  border-radius: 5px;
+  color: #6b21a8;
+  padding: 5px 25px;
+  height: 50px;
+  cursor: pointer;
+  outline: none;
+  background-color: #fff;
+}
+
+.increment {
+  background-color: #ede9fa;
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border: 1px solid #6b21a8;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  // padding: 0px 15px;
+  color: #6b21a8;
+  background-color: #ede9fa;
 }

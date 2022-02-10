@@ -7,27 +7,31 @@ export default class ProductList extends Component {
     super(props);
     this.state = {
       products: [
-        { title: "React js", price: "$99", id: "1" },
-        { title: "Vue js", price: "$89", id: "2" },
-        { title: "Angular js", price: "$79", id: "3" },
+        { title: "React js", price: "$99", id: "1", quantity: "1" },
+        { title: "Vue js", price: "$89", id: "2", quantity: "1" },
+        { title: "Angular js", price: "$79", id: "3", quantity: "1" },
       ],
     };
   }
   removeHandler = (id) => {
     // return console.log("clicked", id);
-    const filteredProduct = this.state.products.filter((e) => e.id !== id);
+    const filteredProduct = this.state.products.filter(
+      (product) => product.id !== id
+    );
     this.setState({ products: filteredProduct });
   };
 
   render() {
     return (
       <div class="ProductList-style">
-        {this.state.products.map((e) => (
+        {this.state.products.map((product) => (
           <Product
-            key={e.id}
-            name={e.title}
-            price={e.price}
-            onDelete={() => this.removeHandler(e.id)}
+            key={product.id}
+            // name={product.title}
+            // price={product.price}
+            // quantity = {product.quantity}
+            product={product}
+            onDelete={() => this.removeHandler(product.id)}
           />
         ))}
       </div>
