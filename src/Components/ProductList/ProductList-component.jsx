@@ -15,10 +15,18 @@ export default class ProductList extends Component {
   }
   removeHandler = (id) => {
     // return console.log("clicked", id);
-    const filteredProduct = this.state.products.filter(
-      (product) => product.id !== id
-    );
+    const filteredProduct = this.state.products.filter((p) => p.id !== id);
     this.setState({ products: filteredProduct });
+  };
+
+  incrementHandler = (id) => {
+    // const selectedItem = this.state.products.find((p) => p.id === id);
+    // console.log("increment click", id);
+    const copyProducts = [...this.state.products];
+    const selectedItem = copyProducts.find((p) => p.id === id);
+    selectedItem.quantity++;
+    // console.log(selectedItem);
+    this.setState({ producs: copyProducts });
   };
 
   render() {
@@ -30,11 +38,23 @@ export default class ProductList extends Component {
             // name={product.title}
             // price={product.price}
             // quantity = {product.quantity}
-            product={product}
+            items={product}
             onDelete={() => this.removeHandler(product.id)}
+            onIncrement={() => this.incrementHandler(product.id)}
           />
         ))}
       </div>
     );
   }
 }
+
+// if (dataid.includes(id)) {
+//     for (let i = 0; i <= dataid.length; i++) {
+//       if (dataid[i] === id) {
+//         dataid.splice(i, 1);
+//         setdataid([...dataid]);
+//       }
+//     }
+//   } else {
+//     setdataid([...dataid, id]);
+//   }
