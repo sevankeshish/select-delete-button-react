@@ -16,8 +16,11 @@ export const Product = (props) => {
         onChange={props.onChange}
         value={props.items.title}
       />
+      <button onClick={props.onDecrement} className="decrement">
+        -
+      </button>
       <button onClick={props.onIncrement} className="increment">
-        Increment
+        +
       </button>
       <button onClick={props.onDelete}>Delete</button>
     </div>
