@@ -7,9 +7,10 @@ export const Product = (props) => {
       {/* <p>product name : {props.name}</p>
       <p>product price : {props.price}</p>
       <button onClick={props.onDelete}>Delete</button> */}
-      <p>product name : {props.items.name}</p>
+      <p>product name : {props.items.title}</p>
       <p>product price : {props.items.price}</p>
       <span className="value">{props.items.quantity}</span>
+      <input type="text" onChange={props.onChange} />
       <button onClick={props.onIncrement} className="increment">
         Increment
       </button>

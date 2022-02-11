@@ -29,6 +29,14 @@ export default class ProductList extends Component {
     this.setState({ producs: copyProducts });
   };
 
+  changeHandler = (event, id) => {
+    // console.log(event.target.value, id);
+    const copyItems = [...this.state.products];
+    const selectedItems = copyItems.find((p) => p.id === id);
+    selectedItems.title = event.target.value;
+    this.setState({ products: copyItems });
+  };
+
   render() {
     return (
       <div class="ProductList-style">
@@ -41,6 +49,7 @@ export default class ProductList extends Component {
             items={product}
             onDelete={() => this.removeHandler(product.id)}
             onIncrement={() => this.incrementHandler(product.id)}
+            onChange={(e) => this.changeHandler(e, product.id)}
           />
         ))}
       </div>
