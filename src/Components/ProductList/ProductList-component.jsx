@@ -8,8 +8,8 @@ export default class ProductList extends Component {
     this.state = {
       products: [
         { title: "React js", price: "$99", id: "1", quantity: "1" },
-        { title: "Vue js", price: "$89", id: "2", quantity: "1" },
-        { title: "Angular js", price: "$79", id: "3", quantity: "1" },
+        { title: " Vue js", price: "$89", id: "2", quantity: "1" },
+        { title: "Angular", price: "$79", id: "3", quantity: "1" },
       ],
     };
   }

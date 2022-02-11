@@ -10,7 +10,12 @@ export const Product = (props) => {
       <p>product name : {props.items.title}</p>
       <p>product price : {props.items.price}</p>
       <span className="value">{props.items.quantity}</span>
-      <input type="text" onChange={props.onChange} />
+      <input
+        className="input"
+        type="text"
+        onChange={props.onChange}
+        value={props.items.title}
+      />
       <button onClick={props.onIncrement} className="increment">
         Increment
       </button>
