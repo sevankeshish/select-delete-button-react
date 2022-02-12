@@ -39,10 +39,17 @@ export default class ProductList extends Component {
 
   decrementHandler = (id) => {
     // console.log(id);
-    const copyState = [...this.state.products];
-    const decrement = copyState.find((p) => p.id === id);
-    decrement.quantity--;
-    this.setState({ products: copyState });
+    const copyProducts = [...this.state.products];
+    const selectedItem = copyProducts.find((p) => p.id === id);
+
+    if (selectedItem.quantity <= 1) {
+      const removeProduct = copyProducts.filter((p) => p.id !== id);
+      this.setState({ products: removeProduct });
+    } else {
+      selectedItem.quantity--;
+      // console.log(selectedItem);
+      this.setState({ products: copyProducts });
+    }
   };
 
   render() {
