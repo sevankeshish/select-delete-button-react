@@ -51,10 +51,34 @@ export default class ProductList extends Component {
       this.setState({ products: copyProducts });
     }
   };
+  ////////////////////////////////CONDITIONAL RENDERING//////////////////////////////
+  // renderProduct = () => {
+  //   if (this.state.products.length === 0)
+  //     return <div>there is no product in the cart</div>;
+  //   return this.state.products.map((product) => (
+  //     <Product
+  //       key={product.id}
+  //       // name={product.title}
+  //       // price={product.price}
+  //       // quantity = {product.quantity}
+  //       items={product}
+  //       onDelete={() => this.removeHandler(product.id)}
+  //       onIncrement={() => this.incrementHandler(product.id)}
+  //       onChange={(e) => this.changeHandler(e, product.id)}
+  //       onDecrement={() => this.decrementHandler(product.id)}
+  //     />
+  //   ));
+  // };
+  ///////////////////////////////////////////////////////////////////////////////////
 
   render() {
+    if (this.state.products.length === 0)
+      return <div>there is no product in the cart</div>;
     return (
       <div class="ProductList-style">
+        {/* ////////////////////////////////CONDITIONAL RENDERING 2//////////////////////////////
+        {!this.state.products.length && <div>go to shoppings</div>}
+        ///////////////////////////////////////////////////////////////////////// */}
         {this.state.products.map((product) => (
           <Product
             key={product.id}
