@@ -2,55 +2,7 @@ import { Component } from "react";
 import { Product } from "../Product/Product-component";
 import "./ProductList-style.scss";
 
-export default class ProductList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      products: [
-        { title: "React js", price: "$99", id: "1", quantity: "1" },
-        { title: " Vue js", price: "$89", id: "2", quantity: "1" },
-        { title: "Angular", price: "$79", id: "3", quantity: "1" },
-      ],
-    };
-  }
-  removeHandler = (id) => {
-    // return console.log("clicked", id);
-    const filteredProduct = this.state.products.filter((p) => p.id !== id);
-    this.setState({ products: filteredProduct });
-  };
-
-  incrementHandler = (id) => {
-    // const selectedItem = this.state.products.find((p) => p.id === id);
-    // console.log("increment click", id);
-    const copyProducts = [...this.state.products];
-    const selectedItem = copyProducts.find((p) => p.id === id);
-    selectedItem.quantity++;
-    // console.log(selectedItem);
-    this.setState({ producs: copyProducts });
-  };
-
-  changeHandler = (event, id) => {
-    // console.log(event.target.value, id);
-    const copyItems = [...this.state.products];
-    const selectedItems = copyItems.find((p) => p.id === id);
-    selectedItems.title = event.target.value;
-    this.setState({ products: copyItems });
-  };
-
-  decrementHandler = (id) => {
-    // console.log(id);
-    const copyProducts = [...this.state.products];
-    const selectedItem = copyProducts.find((p) => p.id === id);
-
-    if (selectedItem.quantity <= 1) {
-      const removeProduct = copyProducts.filter((p) => p.id !== id);
-      this.setState({ products: removeProduct });
-    } else {
-      selectedItem.quantity--;
-      // console.log(selectedItem);
-      this.setState({ products: copyProducts });
-    }
-  };
+class ProductList extends Component {
   ////////////////////////////////CONDITIONAL RENDERING//////////////////////////////
   // renderProduct = () => {
   //   if (this.state.products.length === 0)
@@ -69,27 +21,25 @@ export default class ProductList extends Component {
   //     />
   //   ));
   // };
-  ///////////////////////////////////////////////////////////////////////////////////
+  //
 
   render() {
-    if (this.state.products.length === 0)
+    if (this.props.products.length === 0)
       return <div>there is no product in the cart</div>;
     return (
       <div class="ProductList-style">
-        {/* ////////////////////////////////CONDITIONAL RENDERING 2//////////////////////////////
-        {!this.state.products.length && <div>go to shoppings</div>}
-        ///////////////////////////////////////////////////////////////////////// */}
-        {this.state.products.map((product) => (
+        {/* {!this.state.products.length && <div>go to shoppings</div>} */}
+        {this.props.products.map((product) => (
           <Product
             key={product.id}
             // name={product.title}
             // price={product.price}
             // quantity = {product.quantity}
             items={product}
-            onDelete={() => this.removeHandler(product.id)}
-            onIncrement={() => this.incrementHandler(product.id)}
-            onChange={(e) => this.changeHandler(e, product.id)}
-            onDecrement={() => this.decrementHandler(product.id)}
+            onDelete={() => this.props.onDelete(product.id)}
+            onIncrement={() => this.props.onIncrement(product.id)}
+            onChange={(e) => this.props.onChange(e, product.id)}
+            onDecrement={() => this.props.onDecrement(product.id)}
           />
         ))}
       </div>
@@ -107,3 +57,4 @@ export default class ProductList extends Component {
 //   } else {
 //     setdataid([...dataid, id]);
 //   }
+export default ProductList;
