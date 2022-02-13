@@ -1,4 +1,5 @@
 import "./product-style.scss";
+import { BiTrash } from "react-icons/bi";
 
 export const Product = (props) => {
   console.log(props);
@@ -17,7 +18,8 @@ export const Product = (props) => {
         value={props.items.title}
       />
       <button onClick={props.onDecrement} className="decrement">
-        -
+        {props.items.quantity > 1 ? "-" : <BiTrash className="trash-icon" />}
+        {/* - */}
       </button>
       <button onClick={props.onIncrement} className="increment">
         +
