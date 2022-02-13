@@ -17,8 +17,14 @@ export const Product = (props) => {
         onChange={props.onChange}
         value={props.items.title}
       />
-      <button onClick={props.onDecrement} className="decrement">
-        {props.items.quantity > 1 ? "-" : <BiTrash className="trash-icon" />}
+      <button
+        onClick={props.onDecrement}
+        className={`${
+          props.items.quantity <= 1 ? "trash-icon" : null
+        } decrement`}
+        // className={`${props.items.quantity <= 1 && "trash-icon"} decrement`}
+      >
+        {props.items.quantity > 1 ? "-" : <BiTrash />}
         {/* - */}
       </button>
       <button onClick={props.onIncrement} className="increment">
