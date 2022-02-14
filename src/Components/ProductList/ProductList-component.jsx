@@ -24,22 +24,25 @@ class ProductList extends Component {
   //
 
   render() {
-    if (this.props.products.length === 0)
+    const { products, onDelete, onIncrement, onChange, onDecrement } =
+      this.props;
+
+    if (products.length === 0)
       return <div>there is no product in the cart</div>;
     return (
       <div class="ProductList-style">
         {/* {!this.state.products.length && <div>go to shoppings</div>} */}
-        {this.props.products.map((product) => (
+        {products.map((product) => (
           <Product
             key={product.id}
             // name={product.title}
             // price={product.price}
             // quantity = {product.quantity}
             items={product}
-            onDelete={() => this.props.onDelete(product.id)}
-            onIncrement={() => this.props.onIncrement(product.id)}
-            onChange={(e) => this.props.onChange(e, product.id)}
-            onDecrement={() => this.props.onDecrement(product.id)}
+            onDelete={() => onDelete(product.id)}
+            onIncrement={() => onIncrement(product.id)}
+            onChange={(e) => onChange(e, product.id)}
+            onDecrement={() => onDecrement(product.id)}
           />
         ))}
       </div>

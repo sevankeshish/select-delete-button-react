@@ -1,36 +1,40 @@
 import "./product-style.scss";
 import { BiTrash } from "react-icons/bi";
 
-export const Product = (props) => {
-  console.log(props);
+export const Product = ({
+  items,
+  onChange,
+  onDecrement,
+  onIncrement,
+  onDelete,
+}) => {
+  // console.log(props);
   return (
     <div className="product-style">
       {/* <p>product name : {props.name}</p>
       <p>product price : {props.price}</p>
       <button onClick={props.onDelete}>Delete</button> */}
-      <p>product name : {props.items.title}</p>
-      <p>product price : {props.items.price}</p>
-      <span className="value">{props.items.quantity}</span>
+      <p>product name : {items.title}</p>
+      <p>product price : {items.price}</p>
+      <span className="value">{items.quantity}</span>
       <input
         className="input"
         type="text"
-        onChange={props.onChange}
-        value={props.items.title}
+        onChange={onChange}
+        value={items.title}
       />
       <button
-        onClick={props.onDecrement}
-        className={`${
-          props.items.quantity <= 1 ? "trash-icon" : null
-        } decrement`}
+        onClick={onDecrement}
+        className={`${items.quantity <= 1 ? "trash-icon" : null} decrement`}
         // className={`${props.items.quantity <= 1 && "trash-icon"} decrement`}
       >
-        {props.items.quantity > 1 ? "-" : <BiTrash />}
+        {items.quantity > 1 ? "-" : <BiTrash />}
         {/* - */}
       </button>
-      <button onClick={props.onIncrement} className="increment">
+      <button onClick={onIncrement} className="increment">
         +
       </button>
-      <button onClick={props.onDelete}>Delete</button>
+      <button onClick={onDelete}>Delete</button>
     </div>
   );
 };
