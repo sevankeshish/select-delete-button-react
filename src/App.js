@@ -11,6 +11,7 @@ class App extends Component {
       { title: " Vue js", price: "$89", id: "2", quantity: "1" },
       { title: "Angular", price: "$79", id: "3", quantity: "1" },
     ],
+    count: 0,
   };
 
   removeHandler = (id) => {
@@ -52,11 +53,27 @@ class App extends Component {
     }
   };
 
+  componentDidMount() {
+    console.log("App.js componentDidMount");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("App.js componentDidUpdate");
+    console.log("App.js", prevState);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
   render() {
     return (
       <div className="App">
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          count:{this.state.count}
+        </button>
         {/* <h1>Shopping App</h1> */}
-        <NavBar
+        {/* <NavBar
           totalItems={this.state.products.filter((p) => p.quantity > 0).length}
         />
         <ProductList
@@ -65,7 +82,7 @@ class App extends Component {
           onIncrement={this.incrementHandler}
           onChange={this.changeHandler}
           onDecrement={this.decrementHandler}
-        />
+        /> */}
       </div>
     );
   }
