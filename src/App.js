@@ -11,7 +11,7 @@ class App extends Component {
       { title: " Vue js", price: "$89", id: "2", quantity: "1" },
       { title: "Angular", price: "$79", id: "3", quantity: "1" },
     ],
-    count: 0,
+    // count: 0,
   };
 
   removeHandler = (id) => {
@@ -20,14 +20,27 @@ class App extends Component {
     this.setState({ products: filteredProduct });
   };
 
-  incrementHandler = (id) => {
+  incrementHandler = (val) => {
+    console.log("val", val);
     // const selectedItem = this.state.products.find((p) => p.id === id);
     // console.log("increment click", id);
+    const index = this.state.products.findIndex((item) => item.id === val);
+    console.log(index);
+
+    const product = { ...this.state.products[index] };
+    product.quantity++;
+
     const copyProducts = [...this.state.products];
-    const selectedItem = copyProducts.find((p) => p.id === id);
-    selectedItem.quantity++;
+    copyProducts[index] = product;
+
+    // const copyProducts = [...this.state.products];
+    // const selectedItem = copyProducts.find((p) => p.id === id);
+    // selectedItem.quantity++;
     // console.log(selectedItem);
-    this.setState({ producs: copyProducts });
+
+    //debugging
+    // console.log(this.state.products[0]);
+    this.setState({ products: copyProducts });
   };
 
   changeHandler = (event, id) => {
@@ -69,11 +82,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+        {/* debugging */}
+        {/* <button onClick={() => this.setState({ count: this.state.count + 1 })}>
           count:{this.state.count}
-        </button>
+        </button> */}
+
         {/* <h1>Shopping App</h1> */}
-        {/* <NavBar
+        <NavBar
           totalItems={this.state.products.filter((p) => p.quantity > 0).length}
         />
         <ProductList
@@ -82,7 +97,7 @@ class App extends Component {
           onIncrement={this.incrementHandler}
           onChange={this.changeHandler}
           onDecrement={this.decrementHandler}
-        /> */}
+        />
       </div>
     );
   }
