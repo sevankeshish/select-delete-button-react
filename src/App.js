@@ -21,11 +21,11 @@ class App extends Component {
   };
 
   incrementHandler = (val) => {
-    console.log("val", val);
+    // console.log("val", val);
     // const selectedItem = this.state.products.find((p) => p.id === id);
     // console.log("increment click", id);
     const index = this.state.products.findIndex((item) => item.id === val);
-    console.log(index);
+    // console.log(index);
 
     const product = { ...this.state.products[index] };
     product.quantity++;
@@ -46,7 +46,7 @@ class App extends Component {
   changeHandler = (event, id) => {
     // console.log(event.target.value, id);
     const index = this.state.products.findIndex((item) => item.id === id);
-    console.log(index);
+    // console.log(index);
 
     const product = { ...this.state.products[index] };
     product.title = event.target.value;
@@ -64,17 +64,30 @@ class App extends Component {
 
   decrementHandler = (id) => {
     // console.log(id);
-    const copyProducts = [...this.state.products];
-    const selectedItem = copyProducts.find((p) => p.id === id);
+    const index = this.state.products.findIndex((item) => item.id === id);
+    console.log(index);
 
-    if (selectedItem.quantity <= 1) {
-      const removeProduct = copyProducts.filter((p) => p.id !== id);
+    const product = { ...this.state.products[index] };
+    if (product.quantity <= 1) {
+      const removeProduct = this.state.products.filter((p) => p.id !== id);
       this.setState({ products: removeProduct });
     } else {
-      selectedItem.quantity--;
-      // console.log(selectedItem);
-      this.setState({ products: copyProducts });
+      const copyItems = [...this.state.products];
+      product.quantity--;
+      copyItems[index] = product;
+      this.setState = { products: copyItems };
     }
+    // const copyProducts = [...this.state.products];
+    // const selectedItem = copyProducts.find((p) => p.id === id);
+
+    // if (selectedItem.quantity <= 1) {
+    //   const removeProduct = copyProducts.filter((p) => p.id !== id);
+    //   this.setState({ products: removeProduct });
+    // } else {
+    //   selectedItem.quantity--;
+    //   // console.log(selectedItem);
+    //   this.setState({ products: copyProducts });
+    // }
   };
 
   componentDidMount() {
