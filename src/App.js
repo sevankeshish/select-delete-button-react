@@ -45,10 +45,21 @@ class App extends Component {
 
   changeHandler = (event, id) => {
     // console.log(event.target.value, id);
+    const index = this.state.products.findIndex((item) => item.id === id);
+    console.log(index);
+
+    const product = { ...this.state.products[index] };
+    product.title = event.target.value;
+
     const copyItems = [...this.state.products];
-    const selectedItems = copyItems.find((p) => p.id === id);
-    selectedItems.title = event.target.value;
+    copyItems[index] = product;
+
     this.setState({ products: copyItems });
+
+    // const copyItems = [...this.state.products];
+    // const selectedItems = copyItems.find((p) => p.id === id);
+    // selectedItems.title = event.target.value;
+    // this.setState({ products: copyItems });
   };
 
   decrementHandler = (id) => {
