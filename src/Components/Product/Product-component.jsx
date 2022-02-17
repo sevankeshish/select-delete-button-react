@@ -1,6 +1,19 @@
 import "./product-style.scss";
 import { BiTrash } from "react-icons/bi";
 
+// export default class Product extends Component{
+//   componentWillUnmount() {
+//     console.log("Product.js componentWillUnmount");
+//   }
+//   render(){
+//     console.log("Product render");
+//     return (
+//       <div className="product-style">
+//       </div>
+//     );
+//   }
+// }
+
 export const Product = ({
   items,
   onChange,
