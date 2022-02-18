@@ -75,8 +75,9 @@ class App extends Component {
       const copyItems = [...this.state.products];
       product.quantity--;
       copyItems[index] = product;
-      this.setState = { products: copyItems };
+      this.setState({ products: copyItems });
     }
+
     // const copyProducts = [...this.state.products];
     // const selectedItem = copyProducts.find((p) => p.id === id);
 
