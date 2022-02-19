@@ -113,7 +113,8 @@ class App extends Component {
 
         {/* <h1>Shopping App</h1> */}
         <NavBar
-          totalItems={this.state.products.filter((p) => p.quantity > 0).length}
+          // totalItems={this.state.products.filter((p) => p.quantity > 0).length}
+          totalItems={this.state.products.length}
         />
         <ProductList
           products={this.state.products}
