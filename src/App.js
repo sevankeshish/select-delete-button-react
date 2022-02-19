@@ -1,7 +1,6 @@
 import "./App.css";
 import ProductList from "./Components/ProductList/ProductList-component";
 import { NavBar } from "./Components/Navbar/navBar-component";
-import "./App.css";
 import React, { Component } from "react";
 
 class App extends Component {
