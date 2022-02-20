@@ -1,5 +1,6 @@
 import "./product-style.scss";
 import { BiTrash } from "react-icons/bi";
+import { useEffect } from "react";
 
 // export default class Product extends Component{
 //   componentWillUnmount() {
@@ -21,6 +22,14 @@ export const Product = ({
   onIncrement,
   onDelete,
 }) => {
+  //CDM + CDU + CWUM => useEffect
+  useEffect(() => {
+    console.log("Product js useEffect");
+    return () => {
+      //clean up => timer,interval ,...
+      console.log("Product CWUM");
+    };
+  }, []);
   // console.log(props);
   return (
     <div className="product-style">
