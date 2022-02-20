@@ -2,7 +2,7 @@ import "./App.css";
 import ProductList from "./Components/ProductList/ProductList-component";
 import { NavBar } from "./Components/Navbar/navBar-component";
 import React, { Component } from "react";
-
+import ClassCounter from "./Components/ClassCounter";
 class App extends Component {
   state = {
     products: [
@@ -106,13 +106,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <ClassCounter />
         {/* debugging */}
         {/* <button onClick={() => this.setState({ count: this.state.count + 1 })}>
           count:{this.state.count}
         </button> */}
 
         {/* <h1>Shopping App</h1> */}
-        <NavBar
+        {/* <NavBar
           // totalItems={this.state.products.filter((p) => p.quantity > 0).length}
           totalItems={this.state.products.length}
         />
@@ -122,7 +123,7 @@ class App extends Component {
           onIncrement={this.incrementHandler}
           onChange={this.changeHandler}
           onDecrement={this.decrementHandler}
-        />
+        /> */}
       </div>
     );
   }
