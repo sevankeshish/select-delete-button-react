@@ -4,6 +4,7 @@ import { NavBar } from "./Components/Navbar/navBar-component";
 import React, { Component } from "react";
 import ClassCounter from "./Components/ClassCounter";
 import { FunctionalCounter } from "./Components/FunctionalCounter";
+import ClassTimer from "./Components/ClassTimer";
 class App extends Component {
   state = {
     products: [
@@ -11,6 +12,7 @@ class App extends Component {
       { title: " Vue js", price: "$89", id: "2", quantity: "1" },
       { title: "Angular", price: "$79", id: "3", quantity: "1" },
     ],
+    isShow: true,
     // count: 0,
   };
 
@@ -107,13 +109,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FunctionalCounter />
+        <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
+          {this.state.isShow ? "hide" : "show"}
+        </button>
+        {this.state.isShow && <ClassTimer />}
+        {/* <FunctionalCounter /> */}
         {/* <ClassCounter /> */}
         {/* debugging */}
         {/* <button onClick={() => this.setState({ count: this.state.count + 1 })}>
           count:{this.state.count}
         </button> */}
-
         {/* <h1>Shopping App</h1> */}
         {/* <NavBar
           // totalItems={this.state.products.filter((p) => p.quantity > 0).length}
