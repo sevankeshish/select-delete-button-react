@@ -30,7 +30,7 @@ export default class ClassCounter extends Component {
       <div>
         <button onClick={() => this.add()}>count : {this.state.count}</button>
         <input
-          typr="text"
+          type="text"
           value={this.state.name}
           onChange={(text) => this.changeHandler(text)}
         ></input>

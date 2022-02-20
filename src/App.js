@@ -3,6 +3,7 @@ import ProductList from "./Components/ProductList/ProductList-component";
 import { NavBar } from "./Components/Navbar/navBar-component";
 import React, { Component } from "react";
 import ClassCounter from "./Components/ClassCounter";
+import { FunctionalCounter } from "./Components/FunctionalCounter";
 class App extends Component {
   state = {
     products: [
@@ -106,7 +107,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ClassCounter />
+        <FunctionalCounter />
+        {/* <ClassCounter /> */}
         {/* debugging */}
         {/* <button onClick={() => this.setState({ count: this.state.count + 1 })}>
           count:{this.state.count}
