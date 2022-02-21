@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import ClassCounter from "./Components/ClassCounter";
 import { FunctionalCounter } from "./Components/FunctionalCounter";
 import ClassTimer from "./Components/ClassTimer";
+import { FunctionalTimer } from "./Components/FunctionalTimer";
 class App extends Component {
   state = {
     products: [
@@ -112,7 +113,8 @@ class App extends Component {
         <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
           {this.state.isShow ? "hide" : "show"}
         </button>
-        {this.state.isShow && <ClassTimer />}
+        {this.state.isShow && <FunctionalTimer />}
+        {/* {this.state.isShow && <ClassTimer />} */}
         {/* <FunctionalCounter /> */}
         {/* <ClassCounter /> */}
         {/* debugging */}
