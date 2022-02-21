@@ -14,7 +14,7 @@ export const FunctionalTimer = () => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [count]);
 
   return <div>this is timer</div>;
 };
