@@ -1,3 +1,3 @@
 export const Wrapper = (props) => {
-  return <div className="class">{props.children}</div>;
+  return <div className={props.class}>{props.children}</div>;
 };
