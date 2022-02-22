@@ -6,6 +6,7 @@ import ClassCounter from "./Components/ClassCounter";
 import { FunctionalCounter } from "./Components/FunctionalCounter";
 import ClassTimer from "./Components/ClassTimer";
 import { FunctionalTimer } from "./Components/FunctionalTimer";
+import { Wrapper } from "./Components/HOC/Wrapper";
 class App extends Component {
   state = {
     products: [
@@ -109,11 +110,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
+      <Wrapper className="App">
+        {/* <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
           {this.state.isShow ? "hide" : "show"}
         </button>
-        {this.state.isShow && <FunctionalTimer />}
+        {this.state.isShow && <FunctionalTimer />} */}
         {/* {this.state.isShow && <ClassTimer />} */}
         {/* <FunctionalCounter /> */}
         {/* <ClassCounter /> */}
@@ -122,7 +123,7 @@ class App extends Component {
           count:{this.state.count}
         </button> */}
         {/* <h1>Shopping App</h1> */}
-        {/* <NavBar
+        <NavBar
           // totalItems={this.state.products.filter((p) => p.quantity > 0).length}
           totalItems={this.state.products.length}
         />
@@ -132,8 +133,8 @@ class App extends Component {
           onIncrement={this.incrementHandler}
           onChange={this.changeHandler}
           onDecrement={this.decrementHandler}
-        /> */}
-      </div>
+        />
+      </Wrapper>
     );
   }
 }
