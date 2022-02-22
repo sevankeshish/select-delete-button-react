@@ -7,6 +7,7 @@ import { FunctionalCounter } from "./Components/FunctionalCounter";
 import ClassTimer from "./Components/ClassTimer";
 import { FunctionalTimer } from "./Components/FunctionalTimer";
 import { Wrapper } from "./Components/HOC/Wrapper";
+// import Wrapper from "./Components/HOC/Wrapper";
 class App extends Component {
   state = {
     products: [
@@ -110,7 +111,7 @@ class App extends Component {
 
   render() {
     return (
-      <Wrapper className="App">
+      <>
         {/* <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
           {this.state.isShow ? "hide" : "show"}
         </button>
@@ -134,9 +135,9 @@ class App extends Component {
           onChange={this.changeHandler}
           onDecrement={this.decrementHandler}
         />
-      </Wrapper>
+      </>
     );
   }
 }
 
-export default App;
+export default Wrapper(App, "App");
