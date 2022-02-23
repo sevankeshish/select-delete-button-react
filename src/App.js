@@ -7,6 +7,7 @@ import { FunctionalCounter } from "./Components/FunctionalCounter";
 import ClassTimer from "./Components/ClassTimer";
 import { FunctionalTimer } from "./Components/FunctionalTimer";
 import { Wrapper } from "./Components/HOC/Wrapper";
+import { ClickCounter } from "./Components/HOC-Example/ClickCounter";
 // import Wrapper from "./Components/HOC/Wrapper";
 class App extends Component {
   state = {
@@ -16,6 +17,7 @@ class App extends Component {
       { title: "Angular", price: "$79", id: "3", quantity: "1" },
     ],
     isShow: true,
+    count: 0,
     // count: 0,
   };
 
@@ -111,7 +113,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <div class="App">
         {/* <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
           {this.state.isShow ? "hide" : "show"}
         </button>
@@ -124,7 +126,10 @@ class App extends Component {
           count:{this.state.count}
         </button> */}
         {/* <h1>Shopping App</h1> */}
-        <NavBar
+        <ClickCounter
+        // clickHandler={() => this.setState({ count: this.state.count + 1 })}
+        />
+        {/* <NavBar
           // totalItems={this.state.products.filter((p) => p.quantity > 0).length}
           totalItems={this.state.products.length}
         />
@@ -134,10 +139,11 @@ class App extends Component {
           onIncrement={this.incrementHandler}
           onChange={this.changeHandler}
           onDecrement={this.decrementHandler}
-        />
-      </>
+        /> */}
+      </div>
     );
   }
 }
 
-export default Wrapper(App, "App");
+// export default Wrapper(App, "App");
+export default App;
