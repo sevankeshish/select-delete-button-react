@@ -8,6 +8,7 @@ import ClassTimer from "./Components/ClassTimer";
 import { FunctionalTimer } from "./Components/FunctionalTimer";
 import { Wrapper } from "./Components/HOC/Wrapper";
 import { ClickCounter } from "./Components/HOC-Example/ClickCounter";
+import { HouverCount } from "./Components/HOC-Example/HoverCounter";
 // import Wrapper from "./Components/HOC/Wrapper";
 class App extends Component {
   state = {
@@ -126,9 +127,10 @@ class App extends Component {
           count:{this.state.count}
         </button> */}
         {/* <h1>Shopping App</h1> */}
-        <ClickCounter
-        // clickHandler={() => this.setState({ count: this.state.count + 1 })}
-        />
+        <ClickCounter />
+        <HouverCount />
+        {/* // clickHandler={() => this.setState({ count: this.state.count + 1 })}
+        /> */}
         {/* <NavBar
           // totalItems={this.state.products.filter((p) => p.quantity > 0).length}
           totalItems={this.state.products.length}
