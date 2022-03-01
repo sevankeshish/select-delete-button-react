@@ -12,4 +12,4 @@ const HoverCounter = ({ count, onChange }) => {
   return <h2 onMouseOver={() => onChange()}>hover : {count} times</h2>;
 };
 
-export default WithCount(HoverCounter, 5);
+export default WithCount(HoverCounter, 15);
