@@ -10,6 +10,7 @@ import { Wrapper } from "./Components/HOC/Wrapper";
 import HoverCounter from "./Components/HOC-Example/HoverCounter";
 import ClickCounter from "./Components/HOC-Example/ClickCounter";
 import WithCount from "./Components/HOC-Example/WithCount";
+import ClassRef from "./Components/Ref/ClassRef";
 
 // import Wrapper from "./Components/HOC/Wrapper";
 class App extends Component {
@@ -116,7 +117,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <div class="App">
         {/* <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
           {this.state.isShow ? "hide" : "show"}
         </button>
@@ -129,8 +130,9 @@ class App extends Component {
           count:{this.state.count}
         </button> */}
         {/* <h1>Shopping App</h1> */}
-        <ClickCounter name="sevan" />
-        <HoverCounter />
+        {/* <ClickCounter name="sevan" />
+        <HoverCounter /> */}
+        <ClassRef />
         {/* // clickHandler={() => this.setState({ count: this.state.count + 1 })}
         /> */}
         {/* <NavBar
@@ -144,10 +146,10 @@ class App extends Component {
           onChange={this.changeHandler}
           onDecrement={this.decrementHandler}
         /> */}
-      </>
+      </div>
     );
   }
 }
 
 // export default Wrapper(App, "App");
-export default WithCount(App, "App");
+export default App;
