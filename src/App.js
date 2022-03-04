@@ -12,6 +12,7 @@ import ClickCounter from "./Components/HOC-Example/ClickCounter";
 import WithCount from "./Components/HOC-Example/WithCount";
 import ClassRef from "./Components/Ref/ClassRef";
 import { FunctionRef } from "./Components/Ref/FunctionRef";
+import { UseRefExample } from "./Components/Ref-Practice/RefPractice";
 
 // import Wrapper from "./Components/HOC/Wrapper";
 class App extends Component {
@@ -134,7 +135,8 @@ class App extends Component {
         {/* <ClickCounter name="sevan" />
         <HoverCounter /> */}
         {/* <ClassRef /> */}
-        <FunctionRef />
+        {/* <FunctionRef /> */}
+        <UseRefExample />
         {/* // clickHandler={() => this.setState({ count: this.state.count + 1 })}
         /> */}
         {/* <NavBar
