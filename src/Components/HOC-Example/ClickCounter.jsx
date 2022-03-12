@@ -18,4 +18,4 @@ const ClickCounter = ({ onChange, count, name }) => {
   return <button onClick={onChange}>count : {count} times</button>;
 };
 
-export default WithCount(ClickCounter, 15);
+export default WithCount(ClickCounter, 5);
