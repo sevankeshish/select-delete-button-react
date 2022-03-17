@@ -13,6 +13,7 @@ import WithCount from "./Components/HOC-Example/WithCount";
 import ClassRef from "./Components/Ref/ClassRef";
 import { FunctionRef } from "./Components/Ref/FunctionRef";
 import { UseRefExample } from "./Components/Ref-Practice/RefPractice";
+import { Array } from "./Components/array/Array";
 
 // import Wrapper from "./Components/HOC/Wrapper";
 class App extends Component {
@@ -137,6 +138,7 @@ class App extends Component {
         {/* <ClassRef /> */}
         {/* <FunctionRef /> */}
         <UseRefExample />
+        {/* <Array /> */}
         {/* // clickHandler={() => this.setState({ count: this.state.count + 1 })}
         /> */}
         {/* <NavBar
