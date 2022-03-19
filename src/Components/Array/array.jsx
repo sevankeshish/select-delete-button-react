@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-export const Araay = () => {
-  const [data, setdata] = useState();
+export const Array = () => {
+  //   const [data, setdata] = useState();
 
   const a = [1, 2, 3];
   const b = [4, 5, 6];
-  const r = [7, 8, 9];
+  const r = [7, 8];
 
   const c = `salam ${a}`;
   const d = [];
