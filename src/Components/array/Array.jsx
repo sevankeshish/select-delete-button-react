@@ -5,7 +5,7 @@ export const Array = () => {
 
   const a = [1, 2, 3];
   const b = [4, 5, 6];
-  const r = [7, 8, 9];
+  const r = [7, 8];
 
   const c = `salam ${a}`;
   const d = [];
