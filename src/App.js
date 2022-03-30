@@ -14,6 +14,7 @@ import ClassRef from "./Components/Ref/ClassRef";
 import { FunctionRef } from "./Components/Ref/FunctionRef";
 import { UseRefExample } from "./Components/Ref-Practice/RefPractice";
 import { Array } from "./Components/Array/Array";
+import { RefExercise } from "./Components/UseRef/UseRef";
 // import Wrapper from "./Components/HOC/Wrapper";
 class App extends Component {
   state = {
@@ -136,8 +137,9 @@ class App extends Component {
         <HoverCounter /> */}
         {/* <ClassRef /> */}
         {/* <FunctionRef /> */}
-        <UseRefExample />
-        <Array />
+        {/* <UseRefExample /> */}
+        <RefExercise />
+        {/* <Array /> */}
         {/* // clickHandler={() => this.setState({ count: this.state.count + 1 })}
         /> */}
         {/* <NavBar
